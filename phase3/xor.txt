@@ -1,0 +1,13 @@
+Analyse du comportement du script xor_helper.sh
+Le script xor_helper.sh m a ete fourni comme un outil "boite noire" permettant de chiffrer et dechiffrer des fichiers en utilisant l operation XOR avec une cle hexadecimale. Afin de comprendre son comportement, j ai realise plusieurs tests sur des fichiers simples.
+Pour ces tests, j ai cree des fichiers avec un contenu connu, par exemple :
+falek
+J ai ensuite observe le contenu du fichier original, puis le contenu apres chiffrement et apres dechiffrement. Pour verifier precisement les donnees, j ai utilise l outil xxd afin d afficher le contenu des fichiers en hexadecimal, ainsi que la commande stat pour comparer la taille des fichiers.
+L analyse montre que les fichiers ne sont pas restitues exactement a l identique apres un cycle complet de chiffrement puis dechiffrement. Par exemple, le fichier original contient :
+66 61 6c 65 6b
+Apres chiffrement puis dechiffrement, le fichier obtenu contient :
+66 61 6c
+Cela montre que deux octets ont disparu en fin de fichier.
+En observant la taille des fichiers a chaque etape, j ai remarque que le script perd un octet lors du chiffrement et un autre lors du dechiffrement. La perte totale apres un cycle complet est donc de deux octets.
+En regardant le fonctionnement du script, le probleme semble venir de la boucle while read qui lit les octets un par un. Si le dernier bloc de donnees n est pas suivi par un retour a la ligne, la commande read peut ne pas traiter correctement ce dernier element. Dans ce cas, le dernier octet du flux n est pas pris en compte par la boucle.
+Cette analyse montre que le comportement de xor_helper.sh peut entrainer une perte de donnees dans certains cas. Cela souligne l importance, pour un analyste CERT, de tester et analyser le comportement reel des outils utilises avant de leur faire confiance.

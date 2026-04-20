@@ -1,0 +1,10 @@
+Michelangelo virus (1992) : ce malware contenait une forme de bombe logique qui se declenchait le 6 mars.
+a cette date, il pouvait ecraser les donnees du disque dur des ordinateurs infectes.
+
+Siemens case (2000) : un sous traitant a place une bombe logique dans un systeme industriel. 
+Le programme provoquait des pannes regulieres avant d etre finalement decouvert.
+
+Pourquoi les antivirus ont du mal a les detecter
+
+Les bombes logiques sont difficiles a detecter car qu elles restent inactives jusqu a ce que une condition precise soit remplie (une date, un evenement...).
+avant cela le code ne fait rien de suspect et peut ressembler a du code normal, ce qui rend la detection par les antivirus plus difficile.

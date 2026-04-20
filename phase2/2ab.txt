@@ -1,0 +1,74 @@
+2a)pourquoi XOR permet de chiffrer et dechiffrer avec la meme operation
+reponse deja expliquer dans le cours et aussi sur le sujet de cryptoshell
+l'operation XOR est sa propre inverse.
+
+on pose :
+
+M : le message 
+K : la cle
+C : le message chiffre
+
+le chiffrement avec XOR est defini par :
+
+C=M⊕K
+
+pour dechiffrer on applique la meme operation XOR avec la meme cle :
+M=C⊕K
+En remplacant 
+C :
+
+M=(M⊕K)⊕K
+Grâce aux proprietes algebriques de XOR :
+
+(M⊕K)⊕K=M⊕(K⊕K)=M⊕0=M
+
+donc on retrouve le message original.
+
+les 4 proprietes algebriques utilisees
+
+======Commutativite======
+
+A⊕B=B⊕A
+l’ordre des operandes n’a pas d’importance.
+
+======Associativite======
+
+(A⊕B)⊕C=A⊕(B⊕C)
+Cela permet de regrouper les operations XOR differemment.
+
+======element neutre======
+
+A⊕0=A
+Appliquer XOR avec 0 ne change pas la valeur.
+
+======Auto=inverse======
+
+A⊕A=0
+Un bit XOR avec lui-meme donne toujours 0.
+C’est cette propriete qui permet d’annuler la cle :
+(M⊕K)⊕K=M⊕(K⊕K)=M⊕0=M
+
+2b)
+exemple avec H en HEXA 0x48 :
+
+0x48 XOR 0x5A 
+
+01001000 = 0x48
+01011010 = 0x5A
+--------
+00010010 = 0x12 caractere non affichable 
+
+A = 0x41 XOR 0x5A = 0x1B
+C = 0x43 XOR 0x5A = 0x19
+K = 0x4B XOR 0x5A = 0x11
+
+les caracters resultat sont des caractere de controle (non affichable) 
+utilisee pour controler des terminaux ou des preferique 
+
+| caractère | ASCII (hex) | Clé (hex) | resultat XOR (hex) |
+| --------- | ----------- | --------- | ------------------ |
+| H         | 0x48        | 0x5A      | 0x12               |
+| A         | 0x41        | 0x5A      | 0x1B               |
+| C         | 0x43        | 0x5A      | 0x19               |
+| K         | 0x4B        | 0x5A      | 0x11               |
+

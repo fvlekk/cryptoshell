@@ -1,0 +1,6 @@
+1)dans la classification d'aldman le reansonmware est considerer comme un progreamme simple :
+-il analayse les fichier et les chiffres 
+-il n’infecte pas d’autres programmes en ajoutant son code (contrairement à un virus)
+-il ne se reproduit pas automatiquement
+-son objectif est de bloquer l’accès aux données et demander une rançon
+

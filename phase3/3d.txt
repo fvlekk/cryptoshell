@@ -1,0 +1,6 @@
+Les virus classiques infectent les fichiers executables en modifiant leur contenu. Trois techniques principales existent :
+Ecrasement : le virus remplace le debut du programme hote par son propre code, ce qui detruit souvent le programme original.
+Ajout en fin : le virus ajoute son code a la fin du fichier hote sans supprimer le code original.
+Compagnon : le virus cree un fichier portant le meme nom que le programme original mais avec une priorite d execution plus elevee.
+Un ransomware fonctionne differemment. Son objectif principal n est pas d infecter des programmes pour se reproduire, mais de chiffrer les fichiers de donnees de la victime afin de bloquer l acces aux informations et demander une rancon.
+La similarite est que ces logiciels modifient des fichiers sur le systeme et doivent eviter de traiter plusieurs fois les memes fichiers. La difference principale est que les virus cherchent a se propager en infectant d autres programmes, alors que le ransomware vise surtout a extorquer de l argent en rendant les donnees inaccessibles.

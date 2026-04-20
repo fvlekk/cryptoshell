@@ -1,0 +1,11 @@
+# Fichiers générés par les labs
+**/data/
+**/lab/
+**/*.locked
+**/.cryptoshell_key
+**/target.list
+**/RANSOM_NOTE.txt
+
+# OS
+.DS_Store
+Thumbs.db

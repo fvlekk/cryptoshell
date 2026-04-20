@@ -1,0 +1,20 @@
+*Comparaison des deux techniques : 
+
+-le polymorphisme par reordonnancement de ligne :
+change l'ordre de quelque instructions sans modifier le comportement du programme
+il premet de modifier la signature du programme pour eviter la detection basee sur les sequences de code fixe
+
+-le polymorphisme par chifferement xor :
+chiffre le code ou les donnees avec une cle XOR qui change completement la signature du code ou des donnees , le programme ensuit doit dechiffrer le contenue avant d'exexute le programme ou utiliser les donnees.
+
+*Le plus robuste :
+
+le chifferement xor est clairement plus robuste car le contenue du programme change completement apres le chiffrement il est donc difficile de trouver une signature dans ce code
+
+*invariant detecterble :
+-dans le reordonnancement de lignes il reste des elements invariants comme certaines instruction non changer (non reordonnancer)
+-on peut trouver un ivariant detectable avec le chifferement xor la fonction de dechifferement reste dans le programme cette partie peut etre utiliser par l'antiverus moderne comme signature 
+
+*Detection possible de CryptoShell
+Oui, un antivirus pourrait toujours detecter CryptoShell. Meme avec ces techniques, il reste souvent des elemenets detectables comme le comportement du programme (chiffrement de nombreux fichiers, creation/suppression de fichiers,les notes de rancon, les extentions utiliser pour les fichier chiffrer etc.).
+les antivirus modernes utilisent aussi l analyse comportementale, pas que les signatures.
