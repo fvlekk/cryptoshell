@@ -124,6 +124,53 @@ Cryptoshell/
 
 ---
 
+## Déploiement & utilisation
+
+CryptoShell est un projet de scripts Bash — aucun serveur ni build requis.
+
+### Utilisation locale (Linux / macOS / WSL)
+
+```bash
+# 1. Cloner le repo
+git clone https://github.com/fvlekk/cryptoshell.git
+cd cryptoshell
+
+# 2. Rendre tous les scripts exécutables
+chmod +x */*.sh
+
+# 3. Lancer une phase (exemple phase 3)
+cd phase3
+./setup_lab.sh      # Crée l'environnement de test isolé
+./cryptoshell.sh lab
+```
+
+> Chaque phase crée son propre répertoire `data/` ou `lab/` temporaire. Rien n'est modifié en dehors du dossier de la phase.
+
+### Prérequis système
+
+Les outils suivants doivent être disponibles (présents par défaut sur Linux) :
+
+```bash
+which xxd uuidgen find tr fold   # vérifier la disponibilité
+```
+
+Sur Ubuntu/Debian si manquants :
+```bash
+sudo apt install xxd uuid-runtime
+```
+
+### Environnement recommandé
+
+| Environnement | Compatible |
+|---------------|------------|
+| Linux natif | Oui |
+| macOS | Oui |
+| WSL2 (Windows) | Oui |
+| Git Bash (Windows) | Partiel (`xxd` peut manquer) |
+| Docker | Oui — `docker run -it --rm ubuntu bash` |
+
+---
+
 ## Licence
 
 Ce projet est distribué sous licence [MIT](LICENSE) — usage éducatif uniquement.
